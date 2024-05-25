@@ -13,17 +13,6 @@ export default function Links() {
             </div>
 
 
-            <div className="part-links">
-                <div className="left">
-                    <h2>Github</h2>
-                </div>
-                <div className="right">
-                    <h1 className="linkh1"><a href="https://github.com/mateedo" target="_blank">@mateedo</a></h1>
-                </div>
-            </div>
-
-
-
 
             <div className="part-links">
                 <div className="left">
@@ -31,6 +20,17 @@ export default function Links() {
                 </div>
                 <div className="right">
                     <h1 className="linkh1"><a href="https://linkedin.com/in/mateo-shkodra" target="_blank">@mateo-shkodra</a></h1>
+                </div>
+            </div>
+
+
+            
+            <div className="part-links">
+                <div className="left">
+                    <h2>Github</h2>
+                </div>
+                <div className="right">
+                    <h1 className="linkh1"><a href="https://github.com/mateedo" target="_blank">@mateedo</a></h1>
                 </div>
             </div>
 

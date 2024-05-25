@@ -3,10 +3,12 @@ import Links from "../components/links.js"
 import About from "./about.js"
 export default function Home() {
     return (
-        <div>
-            <Header />
+        <div className="everything">
+            <Header 
+                arr = {[0, 1, 0, 0, 0]}
+            />
             <About />
-            <Links />
+            {/* <Links /> */}
         </div>
     )
 }
