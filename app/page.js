@@ -10,7 +10,9 @@ export default function Home() {
   return (
     <div className="everything">
       <link rel="icon" href="/icon.png" type="image/png" sizes="32x32"/>
-      <Header />
+      <Header 
+        arr = {[1, 0, 0, 0, 0]}
+      />
       <HomePage />
       <Links />
     </div>

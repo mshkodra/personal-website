@@ -4,7 +4,9 @@ import Projects from "./projects.js"
 export default function Home() {
     return (
         <div className="everything">
-            <Header />
+            <Header 
+                arr = {[0, 0, 0, 1, 0]}
+            />
             <Projects />
             <Links />
         </div>
