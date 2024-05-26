@@ -6,18 +6,17 @@ export default function jobexperience() {
             <h1>
                 I have experience working as:
             </h1>
-
+{/* 
             <h2>
                 a Machine Learning Engineer, where I am currently working at Healthcare Systems R&A. I am working on a deep learning model trying to classify the exercises being done from patient videos in an effort to help study chronic lower back pain.
             </h2>
 
             <h2>
                 Last Summer I worked as a Product Manager at a tech startup called ContactMonkey in downtown Toronto, where I was responsible for developing a new product line and designing the foundational features for it.
-            </h2>
+            </h2> */}
             <div className="section">
-                <h2>Work Experience</h2>
                 <Part 
-                    date="2024 Summer"
+                    date="Present"
                     h1="Machine Learning Engineer"
                     h2="Healthcare Systems R&A"
                     h3="Developing and optimizing a deep learning model that classifies physical activities in videos submitted by patients with chronic lower back pain."
@@ -33,7 +32,7 @@ export default function jobexperience() {
 
 
             <h2>
-                I am currently looking for ML/DS internship opportunities for the Winter 2025 term. I'd love to discuss possible opportunities if you are hiring!
+                I am currently looking for ML/DS internship opportunities for the Winter 2025 term. Please feel free to reach out if you are hiring!
             </h2>
         </div>
     )
