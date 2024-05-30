@@ -11,7 +11,7 @@ export default function Projects() {
                     date="Ongoing"
                     h1="TrueWeekly"
                     h2="Developed and deployed a full-stack app with React and Flask, integrating OAuth for Spotify account access. Utilized Pandas, NumPy for data processing, and Skikit-Learn for a playlist recommendation model."
-                    h3="PyTorch, Pandas, Flask, React"
+                    h3="Scikit-Learn, Pandas, Flask, React"
                 />
 
                 <Part 
