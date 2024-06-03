@@ -5,9 +5,7 @@ export default function Projects() {
             <h1>
                 Some side projects of mine,
             </h1>
-
             <h2>consist mainly of full-stack apps, machine learning models or both. Below are some that I am most proud of.</h2>
-
             <div className="section">
                 <Part 
                     date="Ongoing"
@@ -15,7 +13,6 @@ export default function Projects() {
                     h2="Developed and deployed a full-stack app with React and Flask, integrating OAuth for Spotify account access. Utilized Pandas, NumPy for data processing, and Skikit-Learn for a playlist recommendation model."
                     h3="Scikit-Learn, Pandas, Flask, React"
                 />
-
                 <Part 
                     date="Winter 2024"
                     h1="Catan"
@@ -24,7 +21,5 @@ export default function Projects() {
                 />
             </div>
         </div>
-
-
     )
 }
