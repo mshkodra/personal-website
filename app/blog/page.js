@@ -8,7 +8,7 @@ export default function Home() {
                 arr = {[0, 0, 0, 0, 1]}
             />
             <Blog />
-            <Links />
+            {/* <Links /> */}
         </div>
     )
 }
