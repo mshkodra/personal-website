@@ -3,8 +3,10 @@ export default function Projects() {
     return (
         <div className="homeStyling">
             <h1>
-                Some projects I've worked on:
+                Some side projects of mine,
             </h1>
+
+            <h2>consist mainly of full-stack apps, machine learning models or both. Below are some that I am most proud of.</h2>
 
             <div className="section">
                 <Part 

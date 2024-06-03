@@ -4,8 +4,9 @@ export default function jobexperience() {
     return (
         <div className='homeStyling'>
             <h1>
-                I have experience working as:
+                I have experience working,
             </h1>
+            <h2>in small start-up-like environments where individuals must take on considerable responsibility and wear multiple hats. I have experience as a Machine Learning Engineer and as a Product Manager, but am more interested in the former.</h2>
 {/* 
             <h2>
                 a Machine Learning Engineer, where I am currently working at Healthcare Systems R&A. I am working on a deep learning model trying to classify the exercises being done from patient videos in an effort to help study chronic lower back pain.
