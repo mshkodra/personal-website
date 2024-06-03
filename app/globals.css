@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 
+html {
+  overflow-y: scroll;
+}
+
 
 h1 a:link,
 h1 a:visited {
@@ -24,6 +28,7 @@ h1 a:hover {
   margin-right: auto;
   width: 500px;
 }
+
 
 .homeStyling {
   margin-bottom: 40px;
