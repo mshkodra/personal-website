@@ -19,6 +19,12 @@ export default function Projects() {
                     h2="Created Settlers of Catan in C++ using OOP for game elements like tiles, resources, players, and the board. Utilized Observer Design Pattern for real-time updates and interactions, and Factory Design Pattern for game initialization options."
                     h3="C++"
                 />
+                <Part 
+                    date="Summer 2023"
+                    h1="myUniCourseBuddy"
+                    h2="Course scheduling tool for friends to maximize shared lecture time together. Using MongoDB, UW course information sites and Graph Theory to generate and maximize optimize possible course schedules."
+                    h3="React, Next, MongoDB, Puppeteer"
+                />
             </div>
         </div>
     )
