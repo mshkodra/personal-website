@@ -19,6 +19,27 @@ h1 a:hover {
 }
 
 
+h2 a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+
+h2 a:hover{
+  text-decoration: none;
+}
+
+
+li a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+
+li a:hover{
+  text-decoration: none;
+}
+
 
 .everything {
   font-family: "Inter", sans-serif;

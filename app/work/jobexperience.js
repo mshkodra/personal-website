@@ -22,7 +22,7 @@ export default function JobExperience() {
                 />
             </div>
             <h2>
-                I am currently looking for ML/DS internship opportunities for the Winter 2025 term. Please feel free to reach out if you are hiring!
+                I am currently looking for ML/DS internship opportunities for the Fall or Winter. Please feel free to reach out if you are hiring!
             </h2>
         </div>
     )
