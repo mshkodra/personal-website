@@ -6,7 +6,7 @@ export default function Blog() {
 
             <ul>
                 <Link href="blog/germany">
-                        <li>Germany ~ Summer 2024</li> 
+                        <li>EURO 2024 Trip to Germany!!!</li> 
                 </Link>
             </ul>
         </div>
