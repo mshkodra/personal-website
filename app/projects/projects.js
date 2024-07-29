@@ -5,10 +5,23 @@ export default function Projects() {
             <h1>
                 Some side projects of mine,
             </h1>
-            <h2>consist mainly of full-stack apps, machine learning models or both. Below are some that I am most proud of.</h2>
+            <h2> that involved full-stack applications, LLM's or both.</h2>
             <div className="section">
+
                 <Part 
-                    date="Ongoing"
+                    date="Summer 2024"
+                    h1="League of Legends Commentary LLM"
+                    h2="Finetuned GPT4o-mini to be able to accurately generate League of Legends eSports commentary. Generated the data by having Whisper transcribe the commentary from uploaded 2016 World CHampionchip VODs, and had it overlayed over videos using OpenAI's text-to-speech model."
+                    h3="Python, Fine-tuning, Transformers"
+                />
+                <Part 
+                    date="Summer 2024"
+                    h1="Minecraft Chat-Assistant"
+                    h2="Implemented a RAG model that would allow Llama 3 to more accurately answer Minecraft related questions, and had it deployed in a private server with friends for the players to use."
+                    h3="Python, Transformers, RAG, LangChain"
+                />
+                <Part 
+                    date="Winter 2024"
                     h1="TrueWeekly"
                     h2="Developed and deployed a full-stack app with React and Flask, integrating OAuth for Spotify account access. Utilized Pandas, NumPy for data processing, and Skikit-Learn for a playlist recommendation model."
                     h3="Scikit-Learn, Pandas, Flask, React"

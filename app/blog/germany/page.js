@@ -1,6 +1,7 @@
 import Header from "../../components/Header.js"
 import Link from 'next/link'
-export default function Germany() {
+import Germany from "./germany.js"
+export default function GermanyHome() {
     return (
         <div className="everything">
             <Header 
@@ -9,7 +10,8 @@ export default function Germany() {
             <Link href="/blog">
                 <h3 style={{color: "black", fontWeight: "400", fontSize: "15px"}}>Back to Home</h3>
             </Link>
-            <h1>My trip to Germany</h1>
+            <Germany />
+            
         </div>
     )
 }

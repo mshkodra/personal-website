@@ -6,7 +6,7 @@ export default function JobExperience() {
             <h1>
                 I have experience working,
             </h1>
-            <h2>in small start-up-like environments where individuals must take on considerable responsibility and wear multiple hats. I have experience as a Machine Learning Engineer and as a Product Manager, but am more interested in the former.</h2>
+            <h2>in small start-up-like environments where individuals must take on considerable responsibility and wear multiple hats.</h2>
             <div className="section">
                 <Part 
                     date="Present"
@@ -22,7 +22,7 @@ export default function JobExperience() {
                 />
             </div>
             <h2>
-                I am currently looking for ML/DS internship opportunities for the Fall or Winter. Please feel free to reach out if you are hiring!
+                I am currently looking for Machine Learning internship opportunities for the Winter and Summer. Please feel free to reach out if you are hiring!
             </h2>
         </div>
     )
