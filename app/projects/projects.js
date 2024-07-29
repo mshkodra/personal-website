@@ -11,7 +11,7 @@ export default function Projects() {
                 <Part 
                     date="Summer 2024"
                     h1="League of Legends Commentary LLM"
-                    h2="Finetuned GPT4o-mini to be able to accurately generate League of Legends eSports commentary. Generated the data by having Whisper transcribe the commentary from uploaded 2016 World CHampionchip VODs, and had it overlayed over videos using OpenAI's text-to-speech model."
+                    h2="Finetuned GPT4o-mini to be able to accurately generate League of Legends eSports commentary. Generated the data by having Whisper transcribe the commentary from uploaded 2016 World Championship VODs, and had it overlayed over videos using OpenAI's text-to-speech model."
                     h3="Python, Fine-tuning, Transformers"
                 />
                 <Part 
