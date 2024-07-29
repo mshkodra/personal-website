@@ -5,7 +5,7 @@ export default function Projects() {
             <h1>
                 Some side projects of mine,
             </h1>
-            <h2> that involved full-stack applications, LLM's or both.</h2>
+            <h2> that involved full-stack applications, work with LLM's or both.</h2>
             <div className="section">
 
                 <Part 
