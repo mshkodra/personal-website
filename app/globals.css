@@ -41,6 +41,16 @@ li a:hover{
 }
 
 
+.homeStyling a:hover {
+  text-decoration: none;
+}
+
+.homeStyling a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+
 .everything {
   font-family: "Inter", sans-serif;
   font-weight: 100;
