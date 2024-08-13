@@ -25,7 +25,7 @@ export default function About() {
                 <li>MUSIC 223 - Music Studio</li>
             </ul> */}
             <h2>
-                I love playing soccer and the piano, and recently I started reading a lot of literature. My favourite club is Chelsea FC and I used to play soccer competitively when I was a <a href="https://www.youtube.com/watch?v=0vCZo6EahTk" target="_blank">kid</a> until high school, and now I just play for fun.
+                I love playing soccer and the piano, and recently I started reading a lot of literature. My favourite club is Chelsea FC and I used to play soccer competitively when I was a <a href="https://www.youtube.com/watch?v=0vCZo6EahTk" target="_blank">kid</a> until high school, but now I just play for fun.
             </h2>
 
        
