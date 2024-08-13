@@ -22,7 +22,7 @@ export default function JobExperience() {
                 />
             </div>
             <h2>
-                I am currently looking for Machine Learning internship opportunities for the Winter and Summer. Please feel free to reach out if you are hiring!
+                I am currently looking for Data Science or Machine Learning internship opportunities for the Winter and Summer. Please feel free to reach out if you are hiring!
             </h2>
         </div>
     )

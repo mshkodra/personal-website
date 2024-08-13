@@ -13,7 +13,7 @@ export default function About() {
             </h2> */}
 
             <h2>
-                I am a student in my 3A term at the University of Waterloo where I am double majoring in Combinatorics & Optimization and Statistcs.
+                I am a student in my 3A term at the University of Waterloo where I am double majoring in Combinatorics & Optimization and Statisitcs.
             </h2>
 {/* 
             <h2 style={{fontWeight: "500"}}><br/>Fall 2024 Courseload:</h2>
@@ -25,7 +25,7 @@ export default function About() {
                 <li>MUSIC 223 - Music Studio</li>
             </ul> */}
             <h2>
-                I love playing soccer and the piano, and recently I started reading a lot of literature. I support Chelsea FC, the pride of London. I played soccer competitively when I was a <a href="https://www.youtube.com/watch?v=0vCZo6EahTk" target="_blank">kid</a> until high school, and now I just play for fun.
+                I love playing soccer and the piano, and recently I started reading a lot of literature. My favourite club is Chelsea FC and I used to play soccer competitively when I was a <a href="https://www.youtube.com/watch?v=0vCZo6EahTk" target="_blank">kid</a> until high school, and now I just play for fun.
             </h2>
 
        
