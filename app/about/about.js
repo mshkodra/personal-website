@@ -13,7 +13,7 @@ export default function About() {
             </h2> */}
 
             <h2>
-                I am a student in my 3A term at the University of Waterloo where I am double majoring in Combinatorics & Optimization and Statisitcs.
+                I am a student in my 3A term at the University of Waterloo where I am double majoring in Combinatorics & Optimization and Statistics.
             </h2>
 {/* 
             <h2 style={{fontWeight: "500"}}><br/>Fall 2024 Courseload:</h2>
