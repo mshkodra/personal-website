@@ -8,7 +8,7 @@ export default function Links() {
                     <h2>Email</h2>
                 </div>
                 <div className="right">
-                    <h1 className="linkh1"><a href="mailto:mshkodra@uwaterloo.ca" target="_blank">me@mshkodra.com</a></h1>
+                    <h1 className="linkh1"><a href="mailto:mshkodra@uwaterloo.ca" target="_blank">mshkodra@uwaterloo.ca</a></h1>
                 </div>
             </div>
 
