@@ -39,8 +39,12 @@ export default function About() {
             <h2 style={{fontWeight: "500"}}><br/>Current Reading List:</h2>
             <ul>
                 <li className="flicker">The Brothers Karamazov - Fyodor Dostoevsky</li>
+                <li className="flicker">The Myth of Sisyphus - Albert Camus</li>
+                <li>The Outsider - Albert Camus</li>
                 <li>Notes from Underground - Fyodor Dostoevsky</li>
                 <li>Can't Hurt Me - David Goggins</li>
+                <li>Atomic Habits - James Clear</li>
+                <li>Digital Minimalism - Cal Newport</li>
                 <li>Klara and the Sun - Kazuo Ishiguro</li>
                 <li>When We Were Orphans - Kazuo Ishiguro</li>
             </ul>
