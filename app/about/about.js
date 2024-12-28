@@ -38,13 +38,16 @@ export default function About() {
 
             <h2 style={{fontWeight: "500"}}><br/>Current Reading List:</h2>
             <ul>
-                <li className="flicker">The Brothers Karamazov - Fyodor Dostoevsky</li>
-                <li className="flicker">Fear and Trembling - Soren Kierkegaard</li>
+                <li>The Brothers Karamazov - Fyodor Dostoevsky</li>
+                <li>Animal Farm - George Orwell</li>
+                <li>Nausea - Jean-Paul Sartre</li>
+                <li>Fear and Trembling - Soren Kierkegaard</li>
                 <li>The Myth of Sisyphus - Albert Camus</li>
                 <li>The Outsider - Albert Camus</li>
                 <li>Notes from Underground - Fyodor Dostoevsky</li>
 
                 <br/>
+                <li className="flicker">Deep Work - Cal Newport</li>
                 <li>Can't Hurt Me - David Goggins</li>
                 <li>Atomic Habits - James Clear</li>
                 <li>Digital Minimalism - Cal Newport</li>
