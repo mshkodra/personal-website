@@ -3,7 +3,9 @@ export default function Part(props) {
         <div className="part">
             <div className="left">
                 <h2>{props.date}</h2>
+                {/* <h2>{props.location}</h2> */}
             </div>
+
 
             <div className="right">
                 <h1>{props.h1}</h1>
