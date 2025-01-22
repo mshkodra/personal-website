@@ -13,17 +13,9 @@ export default function About() {
             </h2> */}
 
             <h2>
-                I am a student in my 3A term at the University of Waterloo where I am double majoring in Combinatorics & Optimization and Statistics.
+                I am a student in my 3B term at the University of Waterloo, majoring in Statistics.
             </h2>
-{/* 
-            <h2 style={{fontWeight: "500"}}><br/>Fall 2024 Courseload:</h2>
-            <ul>
-                <li>CO 330 - Combinatorial Enumeration</li>
-                <li>CO 342 - Introduction to Graph Theory</li>
-                <li>STAT 333 - Stochastic Processes 1</li>
-                <li>STAT 341 - Computational Statistics and Data Analysis</li>
-                <li>MUSIC 223 - Music Studio</li>
-            </ul> */}
+
             <h2>
                 I love playing soccer and the piano, and enjoy reading about existentialism. My favourite club is Chelsea FC and I used to play soccer competitively when I was a <a href="https://www.youtube.com/watch?v=0vCZo6EahTk" target="_blank">kid</a> until high school, but now I just play for fun.
             </h2>
@@ -38,6 +30,7 @@ export default function About() {
 
             <h2 style={{fontWeight: "500"}}><br/>Current Reading List:</h2>
             <ul>
+                <li className="flicker">On the Genealogy of Morals - Friedrich Nietzsche</li>
                 <li>The Brothers Karamazov - Fyodor Dostoevsky</li>
                 <li>Animal Farm - George Orwell</li>
                 <li>Nausea - Jean-Paul Sartre</li>
@@ -47,7 +40,7 @@ export default function About() {
                 <li>Notes from Underground - Fyodor Dostoevsky</li>
 
                 <br/>
-                <li className="flicker">Deep Work - Cal Newport</li>
+                <li>Deep Work - Cal Newport</li>
                 <li>Can't Hurt Me - David Goggins</li>
                 <li>Atomic Habits - James Clear</li>
                 <li>Digital Minimalism - Cal Newport</li>
