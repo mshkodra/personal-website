@@ -8,31 +8,32 @@ export default function About() {
                 My name is Mateo Shkodra,
             </h1>
 
-            {/* <h2>
-                I am a student at the University of Waterloo entering my 3rd year this fall. I am studying Combinatorics & Optimization and Statistics, but who knows, maybe that is subject to change.
-            </h2> */}
-
             <h2>
-                I am a student in my 3B term at the University of Waterloo, majoring in Statistics.
+                I love playing soccer, and I used to play competitively until high school, now I just play for fun. Here is a cute video of me playing as a <a href="https://www.youtube.com/watch?v=0vCZo6EahTk" target="_blank">kid</a>.
             </h2>
 
+            <h2>At the moment I am really into martial arts and fighting. I started training Brazilian Jiu Jitsu in Winter 2025, and Judo in Winter 2025. I'm a white belt in both, hopefully that will change soon.</h2>
+
             <h2>
-                I love playing soccer and the piano, and enjoy reading about existentialism. My favourite club is Chelsea FC and I used to play soccer competitively when I was a <a href="https://www.youtube.com/watch?v=0vCZo6EahTk" target="_blank">kid</a> until high school, but now I just play for fun.
+                I used to be super into the piano, but I don't play as much as I used to. It is still my favourite genre of music, 
+                check out my <a href="https://open.spotify.com/playlist/2w6EfyTxYyppiSDfKAzHq4?si=360700ac9499439f" target="_blank">spotify playlist</a>.
             </h2>
 
-       
             <h2 style={{fontWeight: "500"}}><br/>Current Repertoire:</h2>
             <ul>
-                {/* <li className="flicker">Waltz in A-flat Major Op. 64, No. 3 - Chopin</li> */}
                 <li><a href="https://www.youtube.com/watch?v=BExfhP9Xric" target="_blank">Prelude in C# Minor Op. 3, No. 2 - Rachmaninoff</a></li>
                 <li>Waltz in C# Minor Op. 64, No. 2 - Chopin</li>
             </ul>
+            
+
+            <h2>I'm into philosophy, primarily existentialism. Though I'm branching out my reading list more and more. Excuse the categorization below, hard to group each book into single categories.</h2>
 
             <h2 style={{fontWeight: "500"}}><br/>Current Reading List:</h2>
             <ul>
-                <li className="flicker">On the Genealogy of Morals - Friedrich Nietzsche</li>
-                <li>The Brothers Karamazov - Fyodor Dostoevsky</li>
-                <li>Animal Farm - George Orwell</li>
+                <h2 style={{fontWeight: "700"}}>Philosophy</h2>
+                <li className="flicker">Nicomachean Ethics - Aristotle</li>
+
+                <br/>
                 <li>Nausea - Jean-Paul Sartre</li>
                 <li>Fear and Trembling - Soren Kierkegaard</li>
                 <li>The Myth of Sisyphus - Albert Camus</li>
@@ -40,12 +41,18 @@ export default function About() {
                 <li>Notes from Underground - Fyodor Dostoevsky</li>
 
                 <br/>
+                <h2 style={{fontWeight: "700"}}>Fiction</h2>
+                <li>Animal Farm - George Orwell</li>
+                <li>The Brothers Karamazov - Fyodor Dostoevsky</li>
+                <li>Klara and the Sun - Kazuo Ishiguro</li>
+                <li>When We Were Orphans - Kazuo Ishiguro</li>
+                <br/>
+
+                <h2 style={{fontWeight: "700"}}>Miscellaneous</h2>
                 <li>Deep Work - Cal Newport</li>
                 <li>Can't Hurt Me - David Goggins</li>
                 <li>Atomic Habits - James Clear</li>
                 <li>Digital Minimalism - Cal Newport</li>
-                <li>Klara and the Sun - Kazuo Ishiguro</li>
-                <li>When We Were Orphans - Kazuo Ishiguro</li>
             </ul>
 
             <br/>
