@@ -1,4 +1,4 @@
-import PFP from "../../public/pfp.png"
+import PFP from "../../public/new_pfp.jpeg"
 import Image from "next/image"
 export default function About() {
     return (
@@ -8,15 +8,20 @@ export default function About() {
                 My name is Mateo Shkodra,
             </h1>
 
+            {/* <h2>
+                I currently live in the Bay Area while I intern at Truewind YC W23!
+            </h2> */}
+
             <h2>
-                I love playing soccer, and I used to play competitively until high school, now I just play for fun. Here is a cute video of me playing as a <a href="https://www.youtube.com/watch?v=0vCZo6EahTk" target="_blank">kid</a>.
+                I love playing soccer, and I used to play competitively until high school. Here is a cute video of me playing as a <a href="https://www.youtube.com/watch?v=0vCZo6EahTk" target="_blank">kid</a>.
             </h2>
 
-            <h2>At the moment I am really into martial arts and fighting. I started training Brazilian Jiu Jitsu in Winter 2025, and Judo in Winter 2025. I'm a white belt in both, hopefully that will change soon.</h2>
+            <h2>
+                At the moment I am really into martial arts and fighting. I started training Brazilian Jiu Jitsu in Winter 2025, and Judo in Winter 2025. I'm a white belt in both, but maybe that will change soon.
+            </h2>
 
             <h2>
-                I used to be super into the piano, but I don't play as much as I used to. It is still my favourite genre of music, 
-                check out my <a href="https://open.spotify.com/playlist/2w6EfyTxYyppiSDfKAzHq4?si=360700ac9499439f" target="_blank">spotify playlist</a>.
+                I used to love playing the piano, but I still love listening to classical music. Check out my <a href="https://open.spotify.com/playlist/2w6EfyTxYyppiSDfKAzHq4?si=360700ac9499439f" target="_blank">spotify playlist</a>.
             </h2>
 
             <h2 style={{fontWeight: "500"}}><br/>Current Repertoire:</h2>
@@ -31,9 +36,7 @@ export default function About() {
             <h2 style={{fontWeight: "500"}}><br/>Current Reading List:</h2>
             <ul>
                 <h2 style={{fontWeight: "700"}}>Philosophy</h2>
-                <li className="flicker">Nicomachean Ethics - Aristotle</li>
-
-                <br/>
+                {/* <br/> */}
                 <li>Nausea - Jean-Paul Sartre</li>
                 <li>Fear and Trembling - Soren Kierkegaard</li>
                 <li>The Myth of Sisyphus - Albert Camus</li>
