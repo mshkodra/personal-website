@@ -8,11 +8,9 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=mathnasium.com
 // @updateURL    https://mshkodra.com/better-radius.js
 // @downloadURL  https://mshkodra.com/better-radius.js
-
 // @grant        none
 // ==/UserScript==
 
-// HELLOOOOOO
 const assessmentDict = {
     "Checkup #0 Assessment": ['PK-1001-CA', 'PK-1003-CA', 'PK-1002-CA', 'PK-1004-CA', 'PK-1007-CA', 'PK-1008-CA', 'PK-1011-CA'],
   "Extension Checkup #0 Assessment": ['PK-1006-CA', 'PK-1010-CA'],
@@ -41,14 +39,6 @@ const assessmentDict = {
     "Checkup #8 Assessment": ['PK-3314-CA', 'PK-3293-00', 'PK-3280-CA', 'PK-3341-00', 'PK-3236-00', 'PK-3281-CA', 'PK-3178-CA', 'PK-3275-CA', 'PK-3370-CA', 'PK-3279-00', 'PK-3316-00', 'PK-3366-CA', 'PK-3263-CA', 'PK-3268-00', 'PK-3318-CA', 'PK-3347-CA', 'PK-3269-00', 'PK-3282-CA', 'PK-H237-CA', 'PK-3355-CA', 'PK-3215-00', 'PK-3223-CA', 'PK-3346-CA', 'PK-3258-CA', 'PK-3348-CA', 'PK-3480-CA', 'PK-3350-CA', 'PK-3271-CA', 'PK-3357-CA', 'PK-3254-CA', 'PK-3358-CA', 'PK-3367-CA', 'PK-3361-CA', 'PK-3363-CA', 'PK-3343-CA', 'PK-3356-CA', 'PK-3411-CA', 'PK-3262-CA'],
   "Extension Checkup #8 Assessment": ['PK-3331-CA', 'PK-3195-CA', 'PK-3344-CA', 'PK-3580-CA', 'PK-3455-CA', 'PK-3518-CA', 'PK-3365-CA', 'PK-3193-CA', 'PK-3382-CA', 'PK-3509-CA', 'PK-3325-CA', 'PK-3511-CA', 'PK-3510-CA', 'PK-3527-CA', 'PK-3512-CA', 'PK-3528-CA', 'PK-3567-CA', 'PK-3587-CA'],
 };
-
-function testSomething() {
-    console.log('Helooooo')
-}
-
-
-
-
 
 
 function OrderLPButton() {
@@ -257,34 +247,37 @@ function GetStudentLevelUp() {
 }
 
 
+const Pages = {
+    LEARNING_PLAN: 'learningplan',
+    LEVEL_UP_REPORT: 'enrollmentreport',
+    OTHER: 'other'
+};
 
+function getCurrentPageEnum(path) {
+    path = path.toLowerCase();
+    if (path.includes(Pages.LEARNING_PLAN)) return Pages.LEARNING_PLAN;
+    if (path.includes(Pages.LEVEL_UP_REPORT)) return Pages.LEVEL_UP_REPORT;
+    return Pages.OTHER;
+}
 
 (function () {
-    'use strict';
 
+    const currentPage = getCurrentPageEnum(location.pathname);
 
-    const path = location.pathname.toLowerCase();
-
-    const learningPlanPage = path.includes("learningplan");
-    const levelUpReport = path.includes('enrollmentreport')
-
-
-    if(learningPlanPage) {
-        window.allowReorder = function () {
-            return true;
-        };
-
-
-        setTimeout(OrderLPButton, 3000);
-        setInterval(highlightMissingBarcodes, 1500); // Check every 1.5 seconds
-    } else if(levelUpReport) {
-        // btnsearch
-//        setInterval(GetStudentLevelUp, 3000);
-        $(".searchDashBtn #btnsearch").on("click", function () {
-            setTimeout(GetStudentLevelUp, 300); // slight delay to wait for data load
-        });
-
+    switch (currentPage) {
+        case Pages.LEARNING_PLAN:
+            window.allowReorder = function () {
+                return true;
+            };
+            setTimeout(OrderLPButton, 3000);
+            setInterval(highlightMissingBarcodes, 1500);
+            break;
+        case Pages.LEVEL_UP_REPORT:
+            $(".searchDashBtn #btnsearch").on("click", function () {
+                setTimeout(GetStudentLevelUp, 300);
+            });
+            break;
+        default:
+            break;
     }
-
-
 })();
