@@ -1,8 +1,12 @@
+
 export default function Home() {
   return (
-    <div className="max-w-2xl mx-auto px-6 py-16 min-h-screen text-left p-8">
-      <p>Hi, my name is Mateo Shkodra</p>
-      <p>I'm a student, currently living in San Francisco</p>
-    </div>
+      <div>
+        <p>Hi, my name is Mateo Shkodra</p>
+        <p>I'm a student living in San Francisco</p>
+        <br/>
+        <p>Email: <a href="mailto:me@mshkodra.com" className="text-blue-600 hover:underline">me@mshkodra.com</a></p>
+        
+      </div>
   );
 }
