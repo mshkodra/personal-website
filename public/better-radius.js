@@ -42,6 +42,10 @@ const assessmentDict = {
   "Extension Checkup #8 Assessment": ['PK-3331-CA', 'PK-3195-CA', 'PK-3344-CA', 'PK-3580-CA', 'PK-3455-CA', 'PK-3518-CA', 'PK-3365-CA', 'PK-3193-CA', 'PK-3382-CA', 'PK-3509-CA', 'PK-3325-CA', 'PK-3511-CA', 'PK-3510-CA', 'PK-3527-CA', 'PK-3512-CA', 'PK-3528-CA', 'PK-3567-CA', 'PK-3587-CA'],
 };
 
+function testSomething() {
+    console.log('Helooooo')
+}
+
 
 
 
