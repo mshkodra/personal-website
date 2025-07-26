@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Better Radius
+// @name         BetterRadius
 // @namespace    https://mshkodra.com/
 // @version      0.1.1
-// @description  better version of radius
+// @description  Better version of Radius.
 // @author       mshkodra
 // @match        https://radius.mathnasium.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=mathnasium.com
