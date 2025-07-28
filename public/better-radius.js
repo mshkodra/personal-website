@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BetterRadius
 // @namespace    https://mshkodra.com/
-// @version      0.1.3
+// @version      0.1.3.1
 // @description  Better version of Radius.  
 // @author       mshkodra
 // @match        https://radius.mathnasium.com/*
@@ -11,7 +11,7 @@
 // @grant        none
 // ==/UserScript==
 
-// UPDATING MESSAGE HELLO - Mateo July 28, 2025
+// Hello this is a message showing you the new changes, and for you to confirm the new update :)
 const assessmentDict = {
     "Checkup #0 Assessment": ['PK-1001-CA', 'PK-1003-CA', 'PK-1002-CA', 'PK-1004-CA', 'PK-1007-CA', 'PK-1008-CA', 'PK-1011-CA'],
   "Extension Checkup #0 Assessment": ['PK-1006-CA', 'PK-1010-CA'],
