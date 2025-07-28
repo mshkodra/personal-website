@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BetterRadius
 // @namespace    https://mshkodra.com/
-// @version      0.1.3.1
+// @version      0.1.4
 // @description  Better version of Radius.  
 // @author       mshkodra
 // @match        https://radius.mathnasium.com/*
@@ -11,8 +11,6 @@
 // @grant        none
 // ==/UserScript==
 
-// Hello this is a message showing you the new changes, and for you to confirm the new update :)
-// - Mateo
 const assessmentDict = {
     "Checkup #0 Assessment": ['PK-1001-CA', 'PK-1003-CA', 'PK-1002-CA', 'PK-1004-CA', 'PK-1007-CA', 'PK-1008-CA', 'PK-1011-CA'],
   "Extension Checkup #0 Assessment": ['PK-1006-CA', 'PK-1010-CA'],
@@ -56,9 +54,10 @@ const assessmentDict = {
 };
 
 
-function OrderLPButton() {
-    console.log("Reached Order LP Button");
 
+
+
+function OrderLPButton() {
     const missing_barcode = document.createElement("style");
     missing_barcode.innerHTML = `
     tr.missing-barcode td {
@@ -156,7 +155,6 @@ function GetStudentLevelUp() {
     // Wait for the data to be fully loaded
     grid.dataSource.one("change", function() {
         var students = grid.dataSource._pristineData;
-        console.log(students);
 
         const today = new Date();
         const endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
@@ -256,8 +254,6 @@ function GetStudentLevelUp() {
         if (exportButton && exportButton.parentNode) {
             exportButton.parentNode.insertBefore(displayDiv, exportButton);
         }
-
-        console.log("reached");
     });
 }
 
