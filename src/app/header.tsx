@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 enum Pages {
     HOME = 'home',
-    ABOUT = 'about'
+    ABOUT = 'about',
+    BOOKSHELF = 'bookshelf'
   }
 export default function Header() {
 
@@ -23,6 +24,13 @@ export default function Header() {
                 onClick={() => setCurrentPage(Pages.ABOUT)}
             >
                 About
+            </Link>
+            <Link 
+                href="/bookshelf" 
+                className={`${currentPage === Pages.BOOKSHELF ? '' : 'text-blue-600 hover:underline'}`}
+                onClick={() => setCurrentPage(Pages.BOOKSHELF)}
+            >
+                Bookshelf
             </Link>
         </div>
     )
