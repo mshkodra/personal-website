@@ -10,7 +10,7 @@ export default function About() {
             <p>I sometimes <Link href="/bookshelf" className="text-blue-600 hover:underline">read</Link>.</p>
             <p>I train BJJ and play a lot of soccer.</p>
             <br/>
-            <p>I'm currently looking for new grad opportunities after I graduate in August 2026.</p>
+            <p>I&apos;m currently looking for new grad opportunities after I graduate in August 2026.</p>
             <br/>
             <p>Internships:</p>
             <ul className="list-disc list-inside space-y-1 ml-4">
