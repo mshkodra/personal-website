@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BetterRadius
 // @namespace    https://mshkodra.com/
-// @version      0.1.5
+// @version      0.2
 // @description  Better version of Radius.  
 // @author       mshkodra
 // @match        https://radius.mathnasium.com/*
