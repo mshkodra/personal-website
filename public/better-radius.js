@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BetterRadius
 // @namespace    https://mshkodra.com/
-// @version      0.1.4
+// @version      0.1.5
 // @description  Better version of Radius.  
 // @author       mshkodra
 // @match        https://radius.mathnasium.com/*
@@ -42,19 +42,20 @@ const assessmentDict = {
   "High School Fundamental Skills": ['PK-3274-CA', 'PK-3264-CA', 'PK-H279-CA', 'PK-3343-CA', 'PK-3281-CA', 'PK-3375-CA', 'PK-H237-CA', 'PK-3350-CA', 'PK-3349-CA', 'PK-H268-CA', 'PK-3351-CA', 'PK-3348-CA', 'PK-3371-CA', 'PK-3459-CA', 'PK-H269-CA', 'PK-3383-CA', 'PK-3369-CA', 'PK-3390-CA', 'PK-3397-CA', 'PK-3388-CA', 'PK-3389-CA', 'PK-3398-CA'],
 
     "Checkup #9 Supplement": ['PK-3348-CA', 'PK-3349-CA', 'PK-3411-CA', 'PK-3383-CA', 'PK-3521-CA', 'PK-3416-CA', 'PK-3390-CA'],
-    "Checkup #9 Assessment": ['PK-3410-CA', 'PK-3352-CA', 'PK-3403-CA', 'PK-3414-CA', 'PK-3391-CA', 'PK-3407-CA', 'PK-3462-CA', 'PK-3513-CA', 'PK-3405-CA', 'PK-3379-CA', 'PK-3408-CA', 'PK-3402-CA', 'PK-3449-CA', 'PK-3409-CA', 'PK-3460-CA', 'PK-3451-CA'],
+    "Checkup #9 Assessment": ['PK-3410-CA', 'PK-3403-CA', 'PK-3414-CA', 'PK-3391-CA', 'PK-3407-CA', 'PK-3462-CA', 'PK-3513-CA', 'PK-3405-CA', 'PK-3408-CA', 'PK-3402-CA', 'PK-3449-CA', 'PK-3409-CA', 'PK-3460-CA', 'PK-3451-CA'],
     
     "Checkup #10 Supplement": ['PK-3397-CA', 'PK-3430-CA', 'PK-3394-CA', 'PK-3440-CA', 'PK-3438-CA', 'PK-3439-CA', 'PK-3444-CA'],
-    "Checkup #10 Assessment": ['PK-3392-CA', 'PK-3407-CA', 'PK-3405-CA', 'PK-3442-CA', 'PK-3393-CA', 'PK-3408-CA', 'PK-3699-CA', 'PK-3426-CA', 'PK-3409-CA', 'PK-3395-CA', 'PK-3416-CA', 'PK-3427-CA', 'PK-3417-CA', 'PK-3428-CA', 'PK-3418-CA', 'PK-3431-CA', 'PK-3429-CA'],
+    "Checkup #10 Assessment": ['PK-3407-CA', 'PK-3392-CA', 'PK-3405-CA', 'PK-3442-CA', 'PK-3408-CA', 'PK-3393-CA', 'PK-3699-CA', 'PK-3426-CA', 'PK-3395-CA', 'PK-3416-CA', 'PK-3409-CA', 'PK-3427-CA', 'PK-3417-CA', 'PK-3434-CA', 'PK-3428-CA', 'PK-3418-CA', 'PK-3435-CA', 'PK-3431-CA', 'PK-3429-CA', 'PK-3732-CA', 'PK-3420-CA', 'PK-4556-CA', 'PK-3719-CA', 'PK-3450-CA', 'PK-3913-CA', 'PK-3720-CA', 'PK-3722-CA', 'PK-3914-CA', 'PK-3723-CA', 'PK-3918-CA', 'PK-3735-CA', 'PK-3740-CA'],
     
     "Checkup #11 Supplement": ['PK-3399-CA', 'PK-3470-CA', 'PK-3709-CA', 'PK-3715-CA', 'PK-3962-CA'],
-    "Checkup #11 Assessment": ['PK-3400-CA', 'PK-3469-CA', 'PK-3437-CA', 'PK-3423-CA', 'PK-3412-CA', 'PK-3698-CA', 'PK-3705-CA', 'PK-3696-CA', 'PK-3706-CA', 'PK-3438-CA', 'PK-3707-CA', 'PK-3439-CA', 'PK-3432-CA', 'PK-3444-CA', 'PK-3708-CA', 'PK-3446-CA', 'PK-3724-CA', 'PK-3448-CA', 'PK-3725-CA', 'PK-3723-CA', 'PK-3941-CA', 'PK-3990-CA', 'PK-3722-CA', 'PK-3942-CA', 'PK-3726-CA', 'PK-3952-CA', 'PK-3734-CA', 'PK-3944-CA', 'PK-3954-CA', 'PK-3953-CA', 'PK-3997-CA', 'PK-3991-CA', 'PK-3711-CA'],
+    "Checkup #11 Assessment": ['PK-3443-CA', 'PK-3400-CA', 'PK-3469-CA', 'PK-3422-CA', 'PK-3424-CA', 'PK-3437-CA', 'PK-3423-CA', 'PK-3956-CA', 'PK-3913-CA', 'PK-3945-CA', 'PK-3698-CA', 'PK-3909-CA', 'PK-3955-CA', 'PK-3696-CA', 'PK-3914-CA', 'PK-3704-CA', 'PK-3438-CA', 'PK-3905-CA', 'PK-3439-CA', 'PK-3432-CA', 'PK-1520-00', 'PK-3444-CA', 'PK-3446-CA', 'PK-3448-CA', 'PK-3910-CA', 'PK-3712-CA', 'PK-3725-CA', 'PK-3723-CA', 'PK-3941-CA', 'PK-3722-CA', 'PK-3946-CA', 'PK-3942-CA', 'PK-3952-CA', 'PK-3937-CA', 'PK-3944-CA', 'PK-3963-CA', 'PK-3938-CA', 'PK-3954-CA', 'PK-3953-CA', 'PK-3741-CA', 'PK-3730-CA', 'PK-3997-CA', 'PK-3991-CA', 'PK-3947-CA', 'PK-3949-CA'],
 
 
 };
 
 const additionalContentDict = {
-    "Checkup #10 Assessment": ['PK-4556-CA', 'PK-3913-CA', 'PK-3914-CA', 'PK-3918-CA', 'PK-3420-CA', 'PK-3450-CA', 'PK-3435-CA', 'PK-3434-CA', 'PK-3723-CA', 'PK-3722-CA', 'PK-3735-CA', 'PK-3740-CA', 'PK-3720-CA', 'PK-3719-CA', 'PK-3732-CA']
+    "Checkup #10 Assessment": ['PK-4556-CA', 'PK-3913-CA', 'PK-3914-CA', 'PK-3918-CA', 'PK-3420-CA', 'PK-3450-CA', 'PK-3435-CA', 'PK-3434-CA', 'PK-3723-CA', 'PK-3722-CA', 'PK-3735-CA', 'PK-3740-CA', 'PK-3720-CA', 'PK-3719-CA', 'PK-3732-CA'],
+    "Checkup #11 Assessment": ['PK-3443-CA', 'PK-3422-CA', 'PK-3424-CA', 'PK-3945-CA', 'PK-3955-CA', 'PK-3938-CA', 'PK-3946-CA', 'PK-3937-CA', 'PK-3730-CA', 'PK-3704-CA', 'PK-3712-CA', 'PK-3949-CA', 'PK-3956-CA', 'PK-3741-CA', 'PK-3963-CA', 'PK-3947-CA', 'PK-3913-CA', 'PK-3914-CA', 'PK-3909-CA', 'PK-1520-00', 'PK-3910-CA', 'PK-3905-CA']
 };
 
 
@@ -66,6 +67,9 @@ function OrderLPButton() {
     missing_barcode.innerHTML = `
     tr.missing-barcode td {
         background-color: #FFB3B3 !important;
+    }
+    tr.additional-content td {
+        background-color: #ADD8E6 !important;
     }`;
 
     document.head.appendChild(missing_barcode);
@@ -139,11 +143,19 @@ function highlightMissingBarcodes() {
 
         if(!isMastered && Object.keys(assessmentDict).includes(assessment)) {
             const validBarcodes = assessmentDict[assessment] || [];
+            const additionalBarcodes = additionalContentDict[assessment] || [];
 
             if (!validBarcodes.includes(barcode)) {
                 $(this).addClass("missing-barcode");
             } else {
                 $(this).removeClass("missing-barcode");
+            }
+
+            // Highlight additional content items in light blue
+            if (additionalBarcodes.includes(barcode)) {
+                $(this).addClass("additional-content");
+            } else {
+                $(this).removeClass("additional-content");
             }
         }
 
@@ -325,65 +337,90 @@ function selectAdditionalContent() {
         return;
     }
 
-    const data = grid.dataSource.data();
-    const checkboxes = document.querySelectorAll('input.asnSelectCB');
+    // Set page size to show all items to avoid pagination issues
+    const originalPageSize = grid.dataSource.pageSize();
+    const totalItems = grid.dataSource.total();
     
-    let checkedCount = 0;
+    console.log(`Setting page size from ${originalPageSize} to ${totalItems} to show all items`);
+    grid.dataSource.pageSize(totalItems);
     
-    data.forEach((item, index) => {
-        if (additionalPKs.includes(item.Barcode)) {
-            if (checkboxes[index]) {
-                checkboxes[index].checked = true;
-                
-                // Trigger change and click events to notify the page's JavaScript
-                checkboxes[index].dispatchEvent(new Event('change', { bubbles: true }));
-                checkboxes[index].dispatchEvent(new Event('click', { bubbles: true }));
-                
-                checkedCount++;
+    // Wait for the grid to update, then select items
+    setTimeout(() => {
+        const allData = grid.dataSource.data();
+        const checkboxes = document.querySelectorAll('input.asnSelectCB');
+        
+        console.log(`Total items in grid: ${allData.length}, Checkboxes visible: ${checkboxes.length}`);
+        console.log(`Looking for PKs:`, additionalPKs);
+        
+        let checkedCount = 0;
+        
+        allData.forEach((item, index) => {
+            if (additionalPKs.includes(item.Barcode)) {
+                if (checkboxes[index]) {
+                    checkboxes[index].checked = true;
+                    
+                    // Trigger change and click events to notify the page's JavaScript
+                    checkboxes[index].dispatchEvent(new Event('change', { bubbles: true }));
+                    checkboxes[index].dispatchEvent(new Event('click', { bubbles: true }));
+                    
+                    checkedCount++;
+                    console.log(`Checked: ${item.Barcode} at index ${index}`);
+                }
+            }
+        });
+
+        console.log(`Checked ${checkedCount} additional content items for ${assessmentName}`);
+        
+        if (checkedCount > 0) {
+            let addSelectedButton = document.querySelector('#btnsave') || 
+                                   document.querySelector('input[value="Add Selected"]');
+            
+            if (addSelectedButton) {
+                setTimeout(() => {
+                    addSelectedButton.click();
+                    console.log('Clicked Add Selected button');
+                }, 500);
+            } else {
+                console.log('Add Selected button not found');
             }
         }
-    });
-
-    console.log(`Checked ${checkedCount} additional content items for ${assessmentName}`);
+    }, 1000); // Wait 1 second for grid to update
     
-    if (checkedCount > 0) {
-        let addSelectedButton = document.querySelector('#btnsave') || 
-                               document.querySelector('input[value="Add Selected"]');
-        
-        if (addSelectedButton) {
-            setTimeout(() => {
-                addSelectedButton.click();
-                console.log('Clicked Add Selected button');
-            }, 500);
-        } else {
-            console.log('Add Selected button not found');
-        }
-    }
+    return; // Exit early since we handle the button click in the timeout
 }
 
 function AddAdditionalContentButton() {
-    const buttonContainer = document.querySelector('.form-actions, .btn-group, .button-container') || 
-                           document.querySelector('form') || 
-                           document.querySelector('#gridPK').parentNode;
+    // Try to place it near the grid header area which should be more visible
+    const gridContainer = document.querySelector('#gridPK');
+    const buttonContainer = gridContainer ? gridContainer.parentNode : document.body;
+    
+    console.log('Grid container:', gridContainer);
+    console.log('Button container:', buttonContainer);
     
     if (!buttonContainer) {
-        console.log('Could not find suitable location for Add Additional Content button');
+        console.log('Could not find container for Add Additional Content button');
         return;
     }
     
     const addContentButton = document.createElement("button");
     addContentButton.textContent = "Add Additional Content";
-    addContentButton.className = "btn btn-default";
+    addContentButton.className = "btn btn-default searchGridBtn leftJustBtnSpacer";
     addContentButton.type = "button";
-    addContentButton.style.marginLeft = "10px";
+    addContentButton.style.marginTop = "5px";
+    addContentButton.style.marginBottom = "15px";
+    addContentButton.id = "addContentBtn";
     
     addContentButton.addEventListener("click", function(e) {
         e.preventDefault();
         selectAdditionalContent();
     });
     
-    buttonContainer.appendChild(addContentButton);
-    console.log('Add Additional Content button added');
+    // Insert it right before the grid
+    buttonContainer.insertBefore(addContentButton, gridContainer);
+    
+    console.log('Add Additional Content button added before grid');
+    console.log('Button element:', addContentButton);
+    console.log('Button in DOM:', document.querySelector('#addContentBtn'));
 }
 
 const Pages = {
