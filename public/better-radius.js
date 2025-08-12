@@ -44,13 +44,17 @@ const assessmentDict = {
     "Checkup #9 Supplement": ['PK-3348-CA', 'PK-3349-CA', 'PK-3411-CA', 'PK-3383-CA', 'PK-3521-CA', 'PK-3416-CA', 'PK-3390-CA'],
     "Checkup #9 Assessment": ['PK-3410-CA', 'PK-3352-CA', 'PK-3403-CA', 'PK-3414-CA', 'PK-3391-CA', 'PK-3407-CA', 'PK-3462-CA', 'PK-3513-CA', 'PK-3405-CA', 'PK-3379-CA', 'PK-3408-CA', 'PK-3402-CA', 'PK-3449-CA', 'PK-3409-CA', 'PK-3460-CA', 'PK-3451-CA'],
     
-    "Checkup #10 Supplement": ['PK-3397-CA', 'PK-3379-CA', 'PK-3430-CA', 'PK-3394-CA', 'PK-3440-CA', 'PK-3438-CA', 'PK-3439-CA', 'PK-3444-CA'],
-    "Checkup #10 Assessment": ['PK-3392-CA', 'PK-3407-CA', 'PK-3422-CA', 'PK-3400-CA', 'PK-3405-CA', 'PK-3442-CA', 'PK-3443-CA', 'PK-3425-CA', 'PK-3404-CA', 'PK-3393-CA', 'PK-3408-CA', 'PK-3412-CA', 'PK-3699-CA', 'PK-3426-CA', 'PK-3409-CA', 'PK-3395-CA', 'PK-3416-CA', 'PK-3469-CA', 'PK-3427-CA', 'PK-3417-CA', 'PK-3436-CA', 'PK-3428-CA', 'PK-3418-CA', 'PK-3431-CA', 'PK-3421-CA', 'PK-3429-CA'],
+    "Checkup #10 Supplement": ['PK-3397-CA', 'PK-3430-CA', 'PK-3394-CA', 'PK-3440-CA', 'PK-3438-CA', 'PK-3439-CA', 'PK-3444-CA'],
+    "Checkup #10 Assessment": ['PK-3392-CA', 'PK-3407-CA', 'PK-3405-CA', 'PK-3442-CA', 'PK-3393-CA', 'PK-3408-CA', 'PK-3699-CA', 'PK-3426-CA', 'PK-3409-CA', 'PK-3395-CA', 'PK-3416-CA', 'PK-3427-CA', 'PK-3417-CA', 'PK-3428-CA', 'PK-3418-CA', 'PK-3431-CA', 'PK-3429-CA'],
     
     "Checkup #11 Supplement": ['PK-3399-CA', 'PK-3470-CA', 'PK-3709-CA', 'PK-3715-CA', 'PK-3962-CA'],
     "Checkup #11 Assessment": ['PK-3400-CA', 'PK-3469-CA', 'PK-3437-CA', 'PK-3423-CA', 'PK-3412-CA', 'PK-3698-CA', 'PK-3705-CA', 'PK-3696-CA', 'PK-3706-CA', 'PK-3438-CA', 'PK-3707-CA', 'PK-3439-CA', 'PK-3432-CA', 'PK-3444-CA', 'PK-3708-CA', 'PK-3446-CA', 'PK-3724-CA', 'PK-3448-CA', 'PK-3725-CA', 'PK-3723-CA', 'PK-3941-CA', 'PK-3990-CA', 'PK-3722-CA', 'PK-3942-CA', 'PK-3726-CA', 'PK-3952-CA', 'PK-3734-CA', 'PK-3944-CA', 'PK-3954-CA', 'PK-3953-CA', 'PK-3997-CA', 'PK-3991-CA', 'PK-3711-CA'],
 
 
+};
+
+const additionalContentDict = {
+    "Checkup #10 Assessment": ['PK-4556-CA', 'PK-3913-CA', 'PK-3914-CA', 'PK-3918-CA', 'PK-3420-CA', 'PK-3450-CA', 'PK-3435-CA', 'PK-3434-CA', 'PK-3723-CA', 'PK-3722-CA', 'PK-3735-CA', 'PK-3740-CA', 'PK-3720-CA', 'PK-3719-CA', 'PK-3732-CA']
 };
 
 
@@ -258,14 +262,140 @@ function GetStudentLevelUp() {
 }
 
 
+function getURLParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+function getLearningPlanName() {
+    const grid = $("#gridLP").data("kendoGrid");
+    if (!grid) return null;
+    
+    const data = grid.dataSource.data();
+    if (data && data.length > 0) {
+        return data[0].AssessmentList;
+    }
+    return null;
+}
+
+function saveLearningPlanCookie() {
+    const learningPlanId = getURLParameter('LearningPlanId');
+    if (learningPlanId) {
+        const learningPlanName = getLearningPlanName();
+        if (learningPlanName) {
+            document.cookie = `${learningPlanId}=${learningPlanName}; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+            console.log(`Saved cookie: ${learningPlanId} = ${learningPlanName}`);
+        }
+    }
+}
+
+function getCookieValue(name) {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        const [key, value] = cookie.trim().split('=');
+        if (key === name) {
+            return value;
+        }
+    }
+    return null;
+}
+
+function selectAdditionalContent() {
+    const learningPlanId = getURLParameter('LearningPlanId');
+    if (!learningPlanId) {
+        alert('No Learning Plan ID found in URL');
+        return;
+    }
+
+    const assessmentName = getCookieValue(learningPlanId);
+    if (!assessmentName) {
+        alert('No assessment name found in cookies for this Learning Plan ID');
+        return;
+    }
+
+    const additionalPKs = additionalContentDict[assessmentName];
+    if (!additionalPKs) {
+        alert(`No additional content defined for assessment: ${assessmentName}`);
+        return;
+    }
+
+    const grid = $("#gridPK").data("kendoGrid");
+    if (!grid) {
+        alert('Grid not found');
+        return;
+    }
+
+    const data = grid.dataSource.data();
+    const checkboxes = document.querySelectorAll('input.asnSelectCB');
+    
+    let checkedCount = 0;
+    
+    data.forEach((item, index) => {
+        if (additionalPKs.includes(item.Barcode)) {
+            if (checkboxes[index]) {
+                checkboxes[index].checked = true;
+                
+                // Trigger change and click events to notify the page's JavaScript
+                checkboxes[index].dispatchEvent(new Event('change', { bubbles: true }));
+                checkboxes[index].dispatchEvent(new Event('click', { bubbles: true }));
+                
+                checkedCount++;
+            }
+        }
+    });
+
+    console.log(`Checked ${checkedCount} additional content items for ${assessmentName}`);
+    
+    if (checkedCount > 0) {
+        let addSelectedButton = document.querySelector('#btnsave') || 
+                               document.querySelector('input[value="Add Selected"]');
+        
+        if (addSelectedButton) {
+            setTimeout(() => {
+                addSelectedButton.click();
+                console.log('Clicked Add Selected button');
+            }, 500);
+        } else {
+            console.log('Add Selected button not found');
+        }
+    }
+}
+
+function AddAdditionalContentButton() {
+    const buttonContainer = document.querySelector('.form-actions, .btn-group, .button-container') || 
+                           document.querySelector('form') || 
+                           document.querySelector('#gridPK').parentNode;
+    
+    if (!buttonContainer) {
+        console.log('Could not find suitable location for Add Additional Content button');
+        return;
+    }
+    
+    const addContentButton = document.createElement("button");
+    addContentButton.textContent = "Add Additional Content";
+    addContentButton.className = "btn btn-default";
+    addContentButton.type = "button";
+    addContentButton.style.marginLeft = "10px";
+    
+    addContentButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        selectAdditionalContent();
+    });
+    
+    buttonContainer.appendChild(addContentButton);
+    console.log('Add Additional Content button added');
+}
+
 const Pages = {
     LEARNING_PLAN: 'learningplan',
     LEVEL_UP_REPORT: 'enrollmentreport',
+    ADD_NEW_ITEM: 'addnewitem',
     OTHER: 'other'
 };
 
 function getCurrentPageEnum(path) {
     path = path.toLowerCase();
+    if (path.includes(Pages.ADD_NEW_ITEM)) return Pages.ADD_NEW_ITEM;
     if (path.includes(Pages.LEARNING_PLAN)) return Pages.LEARNING_PLAN;
     if (path.includes(Pages.LEVEL_UP_REPORT)) return Pages.LEVEL_UP_REPORT;
     return Pages.OTHER;
@@ -282,11 +412,18 @@ function getCurrentPageEnum(path) {
             };
             setTimeout(OrderLPButton, 3000);
             setInterval(highlightMissingBarcodes, 1500);
+            setTimeout(() => {
+                saveLearningPlanCookie();
+                setInterval(saveLearningPlanCookie, 5000);
+            }, 3000);
             break;
         case Pages.LEVEL_UP_REPORT:
             $(".searchDashBtn #btnsearch").on("click", function () {
                 setTimeout(GetStudentLevelUp, 300);
             });
+            break;
+        case Pages.ADD_NEW_ITEM:
+            setTimeout(AddAdditionalContentButton, 2000);
             break;
         default:
             break;
