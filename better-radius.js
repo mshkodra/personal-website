@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BetterRadius
 // @namespace    https://mshkodra.com/
-// @version      0.2
+// @version      0.3
 // @description  Better version of Radius.  
 // @author       mshkodra
 // @match        https://radius.mathnasium.com/*
@@ -15,13 +15,13 @@ const assessmentDict = {
     "Checkup #0 Assessment": ['PK-1001-CA', 'PK-1003-CA', 'PK-1002-CA', 'PK-1004-CA', 'PK-1007-CA', 'PK-1008-CA', 'PK-1011-CA'],
   "Extension Checkup #0 Assessment": ['PK-1006-CA', 'PK-1010-CA'],
 
-    "Checkup #1 Assessment": ['PK-3008-CA', 'PK-3014-CA', 'PK-3001-CA', 'PK-3015-CA', 'PK-3013-CA', 'PK-3006-CA', 'PK-3016-CA', 'PK-3011-CA', 'PK-3014-CA', 'PK-3009-CA', 'PK-3010-CA', 'PK-3004-CA', 'PK-3005-CA', 'PK-3017-CA', 'PK-3007-CA', 'PK-3002-CA', 'PK-A053-CA', 'PK-3003-CA', 'PK-3012-CA', 'PK-3018-CA', 'PK-3173-CA', 'PK-3019-CA', 'PK-3036-CA'],
+    "Checkup #1 Assessment": ['PK-NF01-CA', 'PK-NF05-CA', 'PK-NF06-CA', 'PK-3008-CA', 'PK-NF04-CA', 'PK-NF02-CA', 'PK-NF03-CA', 'PK-3016-CA', 'PK-3014-CA', 'PK-3009-CA', 'PK-3001-CA', 'PK-3010-CA', 'PK-3015-CA', 'PK-3017-CA', 'PK-3013-CA', 'PK-3011-CA', 'PK-3006-CA', 'PK-NF08-CA', 'PK-3036-CA', 'PK-3004-CA', 'PK-3005-CA', 'PK-3007-CA', 'PK-NF07-CA', 'PK-A053-CA', 'PK-3002-CA', 'PK-3173-CA', 'PK-3018-CA', 'PK-NF09-CA', 'PK-3012-CA', 'PK-3019-CA', 'PK-3003-CA'],
   "Extension Checkup #1 Assessment": ['PK-3041-CA', 'PK-3152-CA', 'PK-3164-CA', 'PK-3057-CA', 'PK-3079-CA', 'PK-3153-CA'],
 
     "Checkup #2 Assessment": ['PK-3015-CA', 'PK-3021-CA', 'PK-3009-CA', 'PK-3016-CA', 'PK-3022-CA', 'PK-3010-CA', 'PK-3006-CA', 'PK-3004-CA', 'PK-3013-CA', 'PK-3011-CA', 'PK-3002-CA', 'PK-3003-CA', 'PK-3007-CA', 'PK-3048-CA', 'PK-3025-CA', 'PK-3049-CA', 'PK-3040-CA', 'PK-A054-CA', 'PK-3030-CA', 'PK-3012-CA', 'PK-3020-CA', 'PK-A053-CA', 'PK-3026-CA', 'PK-3018-CA', 'PK-3051-CA', 'PK-3173-CA', 'PK-3019-CA', 'PK-3033-CA', 'PK-3036-CA', 'PK-3042-CA', 'PK-3052-CA', 'PK-3047-CA', 'PK-3226-CA'],
   "Extension Checkup #2 Assessment": ['PK-3041-CA', 'PK-3164-CA', 'PK-3152-CA', 'PK-3050-CA', 'PK-3160-CA', 'PK-3057-CA', 'PK-3080-CA', 'PK-3165-CA', 'PK-3163-CA', 'PK-3153-CA', 'PK-3479-CA'],
 
-    "Checkup #3 Assessment": ['PK-3034-CA', 'PK-3048-CA', 'PK-3023-CA', 'PK-3038-CA', 'PK-3035-CA', 'PK-3076-CA', 'PK-3049-CA', 'PK-3037-CA', 'PK-3056-CA', 'PK-3042-CA', 'PK-3073-CA', 'PK-3026-CA', 'PK-3051-CA', 'PK-3031-CA', 'PK-3077-CA', 'PK-3030-CA', 'PK-3027-CA', 'PK-3069-CA', 'PK-A096-CA', 'PK-3043-CA', 'PK-3032-CA', 'PK-3028-CA', 'PK-3061-CA', 'PK-3052-CA', 'PK-A093-CA', 'PK-3151-CA', 'PK-0183-00', 'PK-3039-CA', 'PK-3326-CA', 'PK-3252-CA', 'PK-3062-CA', 'PK-3029-CA', 'PK-3066-CA', 'PK-0185-00', 'PK-3156-CA', 'PK-3033-CA', 'PK-3095-CA', 'PK-3092-CA', 'PK-3247-CA'],
+    "Checkup #3 Assessment": ['PK-3034-CA', 'PK-3048-CA', 'PK-3023-CA', 'PK-3038-CA', 'PK-3035-CA', 'PK-3076-CA', 'PK-3049-CA', 'PK-3037-CA', 'PK-3056-CA', 'PK-3042-CA', 'PK-3073-CA', 'PK-3026-CA', 'FO-F060-CA', 'PK-3051-CA', 'PK-3031-CA', 'PK-3077-CA', 'FO-F070-CA', 'PK-3030-CA', 'PK-3027-CA', 'PK-3069-CA', 'FO-F080-CA', 'PK-A096-CA', 'PK-3043-CA', 'PK-3032-CA', 'PK-3028-CA', 'PK-3061-CA', 'PK-3052-CA', 'PK-A093-CA', 'PK-3151-CA', 'PK-0183-00', 'PK-3039-CA', 'PK-3326-CA', 'PK-3252-CA', 'PK-3062-CA', 'PK-3029-CA', 'PK-3066-CA', 'PK-0185-00', 'PK-3156-CA', 'PK-3033-CA', 'PK-3095-CA', 'PK-3092-CA', 'PK-3247-CA'],
   "Extension Checkup #3 Assessment": ['PK-3539-CA', 'PK-3160-CA', 'PK-3070-CA', 'PK-3181-CA', 'PK-3057-CA', 'PK-3163-CA', 'PK-3085-CA', 'PK-3080-CA', 'PK-3165-CA', 'PK-3291-CA', 'PK-3154-CA', 'PK-3089-CA', 'PK-3479-CA', 'PK-3081-CA', 'PK-3155-CA'],
 
     "Checkup #4 Assessment": ['PK-3065-CA', 'PK-3055-CA', 'PK-3061-CA', 'PK-3071-CA', 'PK-3069-CA', 'PK-3027-CA', 'PK-3062-00', 'PK-3067-CA', 'PK-3115-00', 'PK-3063-CA', 'PK-3078-00', 'PK-3147-CA', 'PK-3066-CA', 'PK-3060-CA', 'PK-3073-CA', 'PK-3139-CA', 'PK-3148-CA', 'PK-3100-00', 'PK-3095-CA', 'PK-3156-CA', 'PK-3149-CA', 'PK-3064-CA', 'PK-A105-CA', 'PK-3125-CA', 'PK-3138-CA', 'PK-3101-00', 'PK-3122-CA', 'PK-3473-CA', 'PK-3074-CA', 'PK-3117-CA', 'PK-3098-00', 'PK-3039-CA', 'PK-3075-CA'],
@@ -36,7 +36,7 @@ const assessmentDict = {
     "Checkup #7 Assessment": ['PK-3323-CA', 'PK-3230-CA', 'PK-3308-00', 'PK-3179-00', 'PK-3218-CA', 'PK-3304-CA', 'PK-3180-00', 'PK-3146-00', 'PK-3255-00', 'PK-3182-CA', 'PK-3220-CA', 'PK-3312-CA', 'PK-3236-00', 'PK-3209-CA', 'PK-3178-CA', 'PK-3263-CA', 'PK-3206-CA', 'PK-3314-CA', 'PK-3205-CA', 'PK-3212-CA', 'PK-3317-00', 'PK-3222-CA', 'PK-3384-CA', 'PK-3207-CA', 'PK-3238-00', 'PK-3224-CA', 'PK-3223-CA', 'PK-3260-00', 'PK-H119-CA', 'PK-3254-CA', 'PK-3237-00', 'PK-3370-CA', 'PK-H120-CA', 'PK-3367-CA', 'PK-3353-CA'],
   "Extension Checkup #7 Assessment": ['PK-3360-CA', 'PK-3208-CA', 'PK-3331-CA', 'PK-3187-CA', 'PK-3364-CA', 'PK-3523-CA', 'PK-3524-CA', 'PK-3274-CA', 'PK-3188-CA', 'PK-3373-CA', 'PK-3591-CA', 'PK-3341-00', 'PK-3365-CA', 'PK-3526-CA', 'PK-3507-CA', 'PK-3525-CA', 'PK-3183-CA', 'PK-3189-CA', 'PK-3593-CA', 'PK-3342-CA', 'PK-3374-CA', 'PK-3509-CA', 'PK-3510-CA', 'PK-3511-CA'],
 
-    "Checkup #8 Assessment": ['PK-3314-CA', 'PK-3293-00', 'PK-3280-CA', 'PK-3341-00', 'PK-3236-00', 'PK-3281-CA', 'PK-3178-CA', 'PK-3275-CA', 'PK-3370-CA', 'PK-3279-00', 'PK-3316-00', 'PK-3366-CA', 'PK-3263-CA', 'PK-3268-00', 'PK-3318-CA', 'PK-3347-CA', 'PK-3269-00', 'PK-3282-CA', 'PK-H237-CA', 'PK-3355-CA', 'PK-3215-00', 'PK-3223-CA', 'PK-3346-CA', 'PK-3258-CA', 'PK-3348-CA', 'PK-3480-CA', 'PK-3350-CA', 'PK-3271-CA', 'PK-3357-CA', 'PK-3254-CA', 'PK-3358-CA', 'PK-3367-CA', 'PK-3361-CA', 'PK-3363-CA', 'PK-3343-CA', 'PK-3356-CA', 'PK-3411-CA', 'PK-3262-CA'],
+    "Checkup #8 Assessment": ['PK-3314-CA', 'PK-3341-00', 'PK-3293-00', 'PK-3280-CA', 'PK-3318-CA', 'PK-3236-00', 'PK-3275-CA', 'PK-3281-CA', 'PK-3350-CA', 'PK-3268-00', 'PK-3178-CA', 'PK-3279-00', 'PK-3366-CA', 'PK-3346-CA', 'PK-3263-CA', 'PK-3347-CA', 'PK-3355-CA', 'PK-H237-CA', 'PK-3282-CA', 'PK-3363-CA', 'PK-3269-00', 'PK-3215-00', 'PK-3223-CA', 'PK-3348-CA', 'PK-3357-CA', 'PK-3258-CA', 'PK-3480-CA', 'PK-3358-CA', 'PK-3262-CA', 'PK-3254-CA', 'PK-3361-CA', 'PK-3356-CA', 'PK-3271-CA', 'PK-3343-CA', 'PK-3367-CA', 'PK-3411-CA'],
   "Extension Checkup #8 Assessment": ['PK-3331-CA', 'PK-3195-CA', 'PK-3344-CA', 'PK-3580-CA', 'PK-3455-CA', 'PK-3518-CA', 'PK-3365-CA', 'PK-3193-CA', 'PK-3382-CA', 'PK-3509-CA', 'PK-3325-CA', 'PK-3511-CA', 'PK-3510-CA', 'PK-3527-CA', 'PK-3512-CA', 'PK-3528-CA', 'PK-3567-CA', 'PK-3587-CA'],
 
   "High School Fundamental Skills": ['PK-3274-CA', 'PK-3264-CA', 'PK-H279-CA', 'PK-3343-CA', 'PK-3281-CA', 'PK-3375-CA', 'PK-H237-CA', 'PK-3350-CA', 'PK-3349-CA', 'PK-H268-CA', 'PK-3351-CA', 'PK-3348-CA', 'PK-3371-CA', 'PK-3459-CA', 'PK-H269-CA', 'PK-3383-CA', 'PK-3369-CA', 'PK-3390-CA', 'PK-3397-CA', 'PK-3388-CA', 'PK-3389-CA', 'PK-3398-CA'],
@@ -54,6 +54,8 @@ const assessmentDict = {
 };
 
 const additionalContentDict = {
+    "Checkup #1 Assessment": ['PK-NF01-CA', 'PK-NF05-CA', 'PK-F007-CA', 'PK-NF04-CA', 'PK-NF02-CA', 'PK-NF03-CA', 'PK-NF08-CA', 'PK-NF07-CA', 'PK-NF09-CA'],
+    "Checkup #3 Assessment": ['FO-F060-CA', 'FO-F070-CA', 'FO-F080-CA', 'PK-3061-CA', 'PK-0183-00', 'PK-0185-00', 'PK-3066-CA', 'PK-3247-CA'],
     "Checkup #10 Assessment": ['PK-4556-CA', 'PK-3913-CA', 'PK-3914-CA', 'PK-3918-CA', 'PK-3420-CA', 'PK-3450-CA', 'PK-3435-CA', 'PK-3434-CA', 'PK-3723-CA', 'PK-3722-CA', 'PK-3735-CA', 'PK-3740-CA', 'PK-3720-CA', 'PK-3719-CA', 'PK-3732-CA'],
     "Checkup #11 Assessment": ['PK-3443-CA', 'PK-3422-CA', 'PK-3424-CA', 'PK-3945-CA', 'PK-3955-CA', 'PK-3938-CA', 'PK-3946-CA', 'PK-3937-CA', 'PK-3730-CA', 'PK-3704-CA', 'PK-3712-CA', 'PK-3949-CA', 'PK-3956-CA', 'PK-3741-CA', 'PK-3963-CA', 'PK-3947-CA', 'PK-3913-CA', 'PK-3914-CA', 'PK-3909-CA', 'PK-1520-00', 'PK-3910-CA', 'PK-3905-CA']
 };
