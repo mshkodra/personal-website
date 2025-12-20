@@ -3,167 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mshkodra</title>
-    <meta name="description" content="mshkodra">
+    <title>Mateo Shkodra</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <nav class="nav">
-                <a href="#home" class="nav-link active" data-page="home">Home</a>
-                <a href="#about" class="nav-link" data-page="about">About</a>
-                <a href="#bookshelf" class="nav-link" data-page="bookshelf">Bookshelf</a>
+        <div class="header-section">
+            <div class="name-section">
+                <h1>Mateo Shkodra</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="#" class="nav-link active" data-page="me">Me</a>
+                <a href="#" class="nav-link" data-page="reading">Reading</a>
+                <a href="#" class="nav-link" data-page="writing">Writing</a>
             </nav>
-        </header>
-        <br>
+        </div>
         
-        <main>
-            <!-- Home Page -->
-            <section id="home" class="page active">
-                <p>Hi, my name is Mateo Shkodra</p>
-                <p>I'm a student living in Mountain View</p>
-                <br>
-                <p>Welcome to my isolated node on the internet, maybe one day it will be more connected.</p>
-                <br>
-                <p>Email: <a href="mailto:me@mshkodra.com" class="link">me@mshkodra.com</a></p>
-            </section>
-
-            <!-- About Page -->
-            <section id="about" class="page">
-                <p>I am a rising senior at the <a href="https://uwaterloo.ca/statistics-and-actuarial-science/" class="link" target="_blank" rel="noopener noreferrer">University of Waterloo</a> studying Statistics.</p>
-                <br>
-                <p>I sometimes <a href="#bookshelf" class="link" data-page="bookshelf">read</a>.</p>
-                <p>I train BJJ and play a lot of soccer.</p>
-                <br>
-                <br>
-                <p>Internships:</p>
-                <ul class="list">
-                    <li>SWE Intern @ <a href="https://www.eudia.com/" class="link" target="_blank" rel="noopener noreferrer">Eudia</a></li>
-                    <li>SWE Intern @ <a href="https://www.truewind.ai/" class="link" target="_blank" rel="noopener noreferrer">Truewind</a></li>
-                    <li>SWE @ <a href="https://raylu.ai/" class="link" target="_blank" rel="noopener noreferrer">Raylu</a></li>
-                    <li>MLE Intern @ <a href="https://www.healthcare-systems.ca/" class="link" target="_blank" rel="noopener noreferrer">Healthcare Systems R&A</a></li>
-                    <li>PM Intern @ <a href="https://www.contactmonkey.com/" class="link" target="_blank" rel="noopener noreferrer">ContactMonkey</a></li>
-                </ul>
-                <br>
-                <p>Some cool websites:</p>
-                <ul class="list">
-                    <li><a href="https://quarter--mile.com/" class="link" target="_blank" rel="noopener noreferrer">Quarter Mile</a> is a cool website with blog posts.</li>
-                    <li><a href="https://jordangonen.com/" class="link" target="_blank" rel="noopener noreferrer">Jordan Gonen</a> is one of the creators of Quarter Mile.</li>
-                </ul>
-            </section>
-
-            <!-- Bookshelf Page -->
-            <section id="bookshelf" class="page">
-                <div class="bookshelf-header">
-                    <div class="book-column-header">Book Name</div>
-                    <div class="book-column-header">Author</div>
-                </div>
-                
-                <div class="book-list">
-                    <div class="book-row">
-                        <div>The Myth of Sisyphus</div>
-                        <div>Albert Camus</div>
-                    </div>
-                    <div class="book-row">
-                        <div>The Outsider</div>
-                        <div>Albert Camus</div>
-                    </div>
-                    <div class="book-row">
-                        <div>Atomic Habits</div>
-                        <div>James Clear</div>
-                    </div>
-                    <div class="book-row">
-                        <div>Notes from Underground</div>
-                        <div>Fyodor Dostoevsky</div>
-                    </div>
-                    <div class="book-row">
-                        <div>The Brothers Karamazov</div>
-                        <div>Fyodor Dostoevsky</div>
-                    </div>
-                    <div class="book-row">
-                        <div>Can't Hurt Me</div>
-                        <div>David Goggins</div>
-                    </div>
-                    <div class="book-row">
-                        <div>Klara and the Sun</div>
-                        <div>Kazuo Ishiguro</div>
-                    </div>
-                    <div class="book-row">
-                        <div>When We Were Orphans</div>
-                        <div>Kazuo Ishiguro</div>
-                    </div>
-                    <div class="book-row">
-                        <div>Fear and Trembling</div>
-                        <div>Søren Kierkegaard</div>
-                    </div>
-                    <div class="book-row">
-                        <div>Deep Work</div>
-                        <div>Cal Newport</div>
-                    </div>
-                    <div class="book-row">
-                        <div>Digital Minimalism</div>
-                        <div>Cal Newport</div>
-                    </div>
-                    <div class="book-row">
-                        <div>Animal Farm</div>
-                        <div>George Orwell</div>
-                    </div>
-                    <div class="book-row">
-                        <div>Nausea</div>
-                        <div>Jean-Paul Sartre</div>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <div id="me-page" class="page-content active">
+            <p>Some things about me</p>
+            <ul>
+                <li>Grew up in Mississauga</li>
+                <li>Living back and forth between the Bay Area and Toronto</li>
+                <li>Senior at the <a href="https://uwaterloo.ca/statistics-and-actuarial-science/">University of Waterloo</a></li>
+                <li>Training to become a blue belt in <span class="bjj-hover">BJJ</span></li>
+                <li>Washed up soccer player</li>
+                <li><a href="#" class="reading-link" data-page="reading">Reading</a> a lot of fiction and philosophy</li>
+            </ul>
+            
+            <p>Previous Work</p>
+            <ul>
+                <li>SWE Intern @ <a href="https://www.eudia.com/">Eudia</a></li>
+                <li>SWE Intern @ <a href="https://www.truewind.ai/">Truewind</a></li>
+                <li>SWE @ <a href="https://raylu.ai/">Raylu</a></li>
+                <li>MLE Intern @ <a href="https://www.healthcare-systems.ca/">Healthcare Systems R&A</a></li>
+                <li>PM Intern @ <a href="https://www.contactmonkey.com/">ContactMonkey</a></li>
+            </ul>
+            
+            <p>My links</p>
+            <ul>
+                <li><a href="mailto:me@mshkodra.com">me@mshkodra.com</a></li>
+            </ul>
+        </div>
+        
+        <div id="reading-page" class="page-content">
+            <p>Books I've read</p>
+            <ul>
+                <li>The Myth of Sisyphus - Albert Camus</li>
+                <li>The Outsider - Albert Camus</li>
+                <li>Atomic Habits - James Clear</li>
+                <li>Notes from Underground - Fyodor Dostoevsky</li>
+                <li>The Brothers Karamazov - Fyodor Dostoevsky</li>
+                <li>Can't Hurt Me - David Goggins</li>
+                <li>Klara and the Sun - Kazuo Ishiguro</li>
+                <li>When We Were Orphans - Kazuo Ishiguro</li>
+                <li>Fear and Trembling - Søren Kierkegaard</li>
+                <li>Deep Work - Cal Newport</li>
+                <li>Digital Minimalism - Cal Newport</li>
+                <li>Animal Farm - George Orwell</li>
+                <li>Nausea - Jean-Paul Sartre</li>
+            </ul>
+        </div>
+        
+        <div id="writing-page" class="page-content">
+            <!-- Writing content will go here -->
+        </div>
     </div>
-
+    
     <script>
-        // Simple navigation functionality
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
-            const pages = document.querySelectorAll('.page');
+            const pages = document.querySelectorAll('.page-content');
+            const readingLink = document.querySelector('.reading-link');
+            
+            function switchToPage(pageId) {
+                // Remove active class from all nav links and pages
+                navLinks.forEach(l => l.classList.remove('active'));
+                pages.forEach(p => p.classList.remove('active'));
+                
+                // Show the target page
+                document.getElementById(pageId + '-page').classList.add('active');
+                
+                // Make corresponding nav link active
+                const correspondingNavLink = document.querySelector(`[data-page="${pageId}"]`);
+                if (correspondingNavLink) {
+                    correspondingNavLink.classList.add('active');
+                }
+            }
             
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
-                    // Remove active class from all nav links
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    // Hide all pages
-                    pages.forEach(p => p.classList.remove('active'));
-                    
-                    // Add active class to clicked nav link
-                    this.classList.add('active');
-                    
-                    // Show corresponding page
                     const targetPage = this.getAttribute('data-page');
-                    document.getElementById(targetPage).classList.add('active');
+                    switchToPage(targetPage);
                 });
             });
             
-            // Handle internal bookshelf link from about page
-            const internalLinks = document.querySelectorAll('a[data-page]');
-            internalLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
+            // Handle reading link in the text
+            if (readingLink) {
+                readingLink.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
-                    // Remove active class from all nav links
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    // Hide all pages
-                    pages.forEach(p => p.classList.remove('active'));
-                    
-                    // Add active class to corresponding nav link
                     const targetPage = this.getAttribute('data-page');
-                    const correspondingNavLink = document.querySelector(`[data-page="${targetPage}"]`);
-                    if (correspondingNavLink) {
-                        correspondingNavLink.classList.add('active');
-                    }
-                    
-                    // Show corresponding page
-                    document.getElementById(targetPage).classList.add('active');
+                    switchToPage(targetPage);
                 });
-            });
+            }
         });
     </script>
 </body>
