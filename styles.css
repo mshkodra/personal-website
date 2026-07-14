@@ -1,26 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-
 body {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 16px;
-    line-height: 1.4;
+    font-family: 'Latin Modern Roman', 'Computer Modern', Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    line-height: 1.5;
     margin: 0;
     padding: 0;
-    background: white;
-    color: black;
+    background: #fdfdfd;
+    color: #1a1a1a;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 10px 16px;
 }
 
 h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 700;
     margin: 0;
-    color: red;
+    color: #1a1a1a;
 }
 
 .header-section {
@@ -41,7 +39,7 @@ h1 {
 }
 
 .nav-link {
-    color: black;
+    color: #1a1a1a;
     text-decoration: none;
 }
 
@@ -50,7 +48,7 @@ h1 {
 }
 
 .nav-link.active {
-    color: black;
+    font-style: italic;
 }
 
 .page-content {
@@ -64,12 +62,9 @@ h1 {
 .bjj-hover {
     position: relative;
     cursor: pointer;
-    color: #FF69B4;
-    text-decoration: none;
-}
-
-.bjj-hover:hover {
+    color: #1a1a1a;
     text-decoration: underline;
+    text-decoration-style: dotted;
 }
 
 .bjj-hover:hover::after {
@@ -83,20 +78,23 @@ h1 {
     background-image: url('image.jpg');
     background-size: cover;
     background-position: center;
-    border: 2px solid black;
+    border: 1px solid #1a1a1a;
     background-color: white;
     z-index: 1000;
     display: block;
 }
 
 a {
-    text-decoration: none;
+    color: #1a1a1a;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #555;
 }
 
 .reading-link {
-    color: blue;
+    color: #1a1a1a;
 }
