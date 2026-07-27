@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    max-width: 650px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 10px 16px;
 }
@@ -74,11 +74,49 @@ a:hover {
     color: #1a1a1a;
 }
 
+.aside {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-top: -0.6em;
+}
+
+/* Same lower-opacity treatment as .aside, but inline -- sits right after a
+   list item's title on the same line instead of wrapping to its own. */
+.comment {
+    opacity: 0.6;
+    font-size: 15px;
+}
+
+.comment::before {
+    content: '— ';
+}
+
+/* Same lower-opacity treatment as .comment, but drops to its own line and
+   indents 40px -- matching the depth a real nested <ul> would sit at (see
+   .links-row) -- rather than staying inline after the parent item's text. */
+.comment-block {
+    display: block;
+    margin-left: 40px;
+    opacity: 0.6;
+    font-size: 15px;
+}
+
+.comment-block::before {
+    content: '— ';
+}
+
 /* Splitting the reading list into two <ul>s isn't enough on its own -- adjacent
    block margins collapse, so two lists back to back get the same gap as one.
-   This pushes the second group down explicitly. */
+   This pushes the second group down explicitly. Lives on the section-label
+   above the second <ul> now that each group has one. */
 .reading-break {
     margin-top: 2em;
+}
+
+.section-label {
+    font-size: 18px;
+    color: #1a1a1a;
+    margin: 1.2em 0 0.4em 0;
 }
 
 /* A single row instead of a stacked bulleted list -- three one-word links
