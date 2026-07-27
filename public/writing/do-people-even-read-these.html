@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>do people even read these? — Mateo Shkodra</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html#writing" class="back-link">← Writing</a>
+
+        <article class="post">
+            <h1>do people even read these?</h1>
+            <p class="post-date"><time datetime="2026-07-26">July 26, 2026</time></p>
+            <p>Every personal website I find has a blog section.</p>
+
+            <p>My question is: do people even read them?</p>
+
+            <p>Should anyone care about the things people write about, other than the writers themselves?</p>
+
+            <p>Most of the people aren't interesting enough, and don't write anything interesting enough.</p>
+
+            <p>I'm no different from them.</p>
+
+            <p>Maybe one day I'll find out the answer to my question.</p>
+
+            <div class="vote" data-slug="do-people-even-read-these">
+                <button class="vote-btn" data-dir="up" aria-label="Agree">↑</button>
+                <span class="vote-count" data-count="up">0</span>
+                <button class="vote-btn" data-dir="down" aria-label="Disagree">↓</button>
+                <span class="vote-count" data-count="down">0</span>
+                <span class="vote-note">Only people who read this far can vote, which ruins the sample. Vote anyway.</span>
+                <span class="vote-msg" role="status"></span>
+            </div>
+
+        </article>
+    </div>
+
+    <script>
+        (function () {
+            const box = document.querySelector('.vote');
+            if (!box) return;
+
+            const slug = box.dataset.slug;
+            const storageKey = 'voted:' + slug;
+            const msg = box.querySelector('.vote-msg');
+            const buttons = box.querySelectorAll('.vote-btn');
+
+            function paint(counts) {
+                box.querySelectorAll('.vote-count').forEach((el) => {
+                    el.textContent = counts[el.dataset.count] ?? 0;
+                });
+            }
+
+            // One vote per browser. This is a soft limit — clearing storage or
+            // opening a private window gets around it. The server-side rate
+            // limit is what actually bounds abuse.
+            function alreadyVoted() {
+                try {
+                    return localStorage.getItem(storageKey);
+                } catch {
+                    return null; // storage blocked; let the server be the judge
+                }
+            }
+
+            function lock(dir) {
+                buttons.forEach((b) => {
+                    b.disabled = true;
+                    b.classList.toggle('chosen', b.dataset.dir === dir);
+                });
+            }
+
+            async function load() {
+                const res = await fetch(`/api/vote?slug=${encodeURIComponent(slug)}`);
+                if (!res.ok) throw new Error('load failed: ' + res.status);
+                paint(await res.json());
+                const prior = alreadyVoted();
+                if (prior) lock(prior);
+            }
+
+            async function vote(dir) {
+                lock(dir); // optimistic, so a double-click can't send twice
+                const res = await fetch(
+                    `/api/vote?slug=${encodeURIComponent(slug)}&dir=${dir}`,
+                    { method: 'POST' }
+                );
+                if (!res.ok) {
+                    msg.textContent = res.status === 429
+                        ? 'slow down'
+                        : 'something broke';
+                    return;
+                }
+                paint(await res.json());
+                try { localStorage.setItem(storageKey, dir); } catch {}
+            }
+
+            buttons.forEach((b) => {
+                b.addEventListener('click', () => vote(b.dataset.dir));
+            });
+
+            // The widget renders at 0 and fills in when the counts arrive. If
+            // the API is unreachable, hide it rather than leaving arrows that
+            // silently do nothing next to a number that isn't real.
+            load().catch((err) => {
+                box.hidden = true;
+                console.error(err);
+            });
+        })();
+    </script>
+</body>
+</html>
