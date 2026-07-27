@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "outputDirectory": "public",
   "functions": {
     "api/*.sh": { "runtime": "vercel-bash@4.2.0" }
   }
