@@ -13,9 +13,9 @@
                 <h1>Mateo Shkodra</h1>
             </div>
             <nav class="main-nav">
-                <a href="#" class="nav-link active" data-page="me">Me</a>
-                <a href="#" class="nav-link" data-page="reading">Reading</a>
-                <a href="#" class="nav-link" data-page="writing">Writing</a>
+                <a href="#me" class="nav-link active" data-page="me">Me</a>
+                <a href="#reading" class="nav-link" data-page="reading">Reading</a>
+                <a href="#writing" class="nav-link" data-page="writing">Writing</a>
             </nav>
         </div>
         
@@ -27,7 +27,7 @@
                 <li>Senior at the <a href="https://uwaterloo.ca/statistics-and-actuarial-science/">University of Waterloo</a></li>
                 <li>Training to become a blue belt in <span class="bjj-hover">BJJ</span></li>
                 <li>Washed up soccer player</li>
-                <li><a href="#" class="reading-link" data-page="reading">Reading</a> a lot of fiction and philosophy</li>
+                <li><a href="#reading" class="reading-link">Reading</a> a lot of fiction and philosophy</li>
             </ul>
             
             <p>Previous Work</p>
@@ -66,7 +66,12 @@
         </div>
         
         <div id="writing-page" class="page-content">
-            <!-- Writing content will go here -->
+            <ul class="post-list">
+                <li>
+                    <a href="writing/do-people-even-read-these.html">do people even read these?</a>
+                    <span class="post-date"><time datetime="2026-07-26">July 26, 2026</time></span>
+                </li>
+            </ul>
         </div>
     </div>
     
@@ -74,39 +79,35 @@
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
             const pages = document.querySelectorAll('.page-content');
-            const readingLink = document.querySelector('.reading-link');
-            
+            const pageIds = ['me', 'reading', 'writing'];
+
             function switchToPage(pageId) {
                 // Remove active class from all nav links and pages
                 navLinks.forEach(l => l.classList.remove('active'));
                 pages.forEach(p => p.classList.remove('active'));
-                
+
                 // Show the target page
                 document.getElementById(pageId + '-page').classList.add('active');
-                
-                // Make corresponding nav link active
-                const correspondingNavLink = document.querySelector(`[data-page="${pageId}"]`);
+
+                // Make corresponding nav link active. Scoped to .nav-link so it
+                // can't match the inline "Reading" link in the body text.
+                const correspondingNavLink =
+                    document.querySelector(`.nav-link[data-page="${pageId}"]`);
                 if (correspondingNavLink) {
                     correspondingNavLink.classList.add('active');
                 }
             }
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetPage = this.getAttribute('data-page');
-                    switchToPage(targetPage);
-                });
-            });
-            
-            // Handle reading link in the text
-            if (readingLink) {
-                readingLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetPage = this.getAttribute('data-page');
-                    switchToPage(targetPage);
-                });
+
+            // The URL fragment is the source of truth for which tab is showing.
+            // That makes #writing linkable from anywhere — the blog posts link
+            // back to it — and makes the browser's back button work.
+            function route() {
+                const pageId = location.hash.slice(1);
+                switchToPage(pageIds.includes(pageId) ? pageId : 'me');
             }
+
+            window.addEventListener('hashchange', route);
+            route();
         });
     </script>
 </body>
