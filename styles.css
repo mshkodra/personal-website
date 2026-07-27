@@ -165,45 +165,53 @@ a:hover {
 
 .vote {
     display: flex;
-    align-items: center;
-    gap: 0.4em;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.3em;
     margin: 3em 0 2em 0;
-    padding-top: 1.5em;
-    border-top: 1px solid #eee;
-    font-size: 16px;
 }
 
+/* Styled to read like the "← Writing" back link rather than a form control:
+   no border, no fill, underline on hover. */
 .vote-btn {
     font-family: inherit;
-    font-size: 16px;
-    line-height: 1;
-    padding: 0.35em 0.6em;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0;
     background: none;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    border: none;
     color: #1a1a1a;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .vote-btn:hover:not(:disabled) {
-    border-color: #1a1a1a;
+    text-decoration: underline;
 }
 
 .vote-btn:disabled {
     cursor: default;
-    opacity: 0.5;
+    color: #999;
 }
 
 .vote-btn.chosen {
-    opacity: 1;
-    border-color: #1a1a1a;
-    background: #f0f0f0;
+    color: #1a1a1a;
+    text-decoration: underline;
 }
 
 .vote-count {
     color: #555;
     margin-right: 0.8em;
     font-variant-numeric: tabular-nums;
+}
+
+/* Set smaller and lighter than the arrows so it reads as an aside rather than
+   an instruction. Wraps to its own line on narrow screens. */
+.vote-note {
+    color: #777;
+    font-size: 16px;
+    font-style: italic;
+    margin-left: 0.4em;
 }
 
 .vote-msg {
