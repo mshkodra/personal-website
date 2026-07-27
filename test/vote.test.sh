@@ -117,5 +117,23 @@ run GET "/api/vote?slug=do-people-even-read-these"
 check "no redis config -> 500" "$_STATUS" "500"
 UPSTASH_URL="$UPSTASH_REDIS_REST_URL"
 
+# The two checks above set UPSTASH_URL/UPSTASH_TOKEN directly after sourcing
+# the script, so they never exercise vote.sh's own fallback chain -- only a
+# fresh `source` with just the env var set does that. Prod's Upstash
+# integration names its vars with a store-name prefix (dijkstra_*) rather
+# than the plain names the integration docs show, which is exactly the kind
+# of mismatch this guards against.
+echo "--- env var fallback (exercises the real resolution logic, not the stub)"
+prefixed_result="$(
+	unset UPSTASH_REDIS_REST_URL UPSTASH_REDIS_REST_TOKEN KV_REST_API_URL KV_REST_API_TOKEN
+	export dijkstra_KV_REST_API_URL="https://example.upstash.io"
+	export dijkstra_KV_REST_API_TOKEN="test-token"
+	# shellcheck disable=SC1091
+	. "$REPO/api/vote.sh"
+	echo "$UPSTASH_URL|$UPSTASH_TOKEN"
+)"
+check "dijkstra_-prefixed vars resolve" "$prefixed_result" \
+	"https://example.upstash.io|test-token"
+
 echo
 if [ "$FAILURES" -eq 0 ]; then echo "all passed"; else echo "$FAILURES failed"; exit 1; fi

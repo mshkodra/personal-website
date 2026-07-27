@@ -13,8 +13,13 @@
 # NOTE: bootstrap runs under `set -euo pipefail`, so any command that can
 # legitimately "fail" (grep finding nothing) needs an explicit guard.
 
-UPSTASH_URL="${UPSTASH_REDIS_REST_URL:-${KV_REST_API_URL:-}}"
-UPSTASH_TOKEN="${UPSTASH_REDIS_REST_TOKEN:-${KV_REST_API_TOKEN:-}}"
+# Vercel's Upstash integration auto-prefixes its env vars with the store's
+# name when it connects to a project -- ours came through as dijkstra_*, not
+# the plain KV_REST_API_* names the integration docs show. Falling back
+# through all three keeps this working if the store is ever recreated (and
+# gets a different prefix) or reconnected without one.
+UPSTASH_URL="${UPSTASH_REDIS_REST_URL:-${dijkstra_KV_REST_API_URL:-${KV_REST_API_URL:-}}}"
+UPSTASH_TOKEN="${UPSTASH_REDIS_REST_TOKEN:-${dijkstra_KV_REST_API_TOKEN:-${KV_REST_API_TOKEN:-}}}"
 
 RATE_LIMIT=5      # votes per IP...
 RATE_WINDOW=60    # ...per this many seconds
@@ -70,7 +75,10 @@ handler() {
 
 	if [ -z "$UPSTASH_URL" ] || [ -z "$UPSTASH_TOKEN" ]; then
 		http_response_code 500
-		echo '{"error":"redis is not configured"}'
+		# Name the variables it looked for -- never their values. Without this
+		# the failure is indistinguishable from "the store is connected but
+		# under different variable names".
+		echo '{"error":"redis is not configured","expected":["UPSTASH_REDIS_REST_URL + UPSTASH_REDIS_REST_TOKEN","dijkstra_KV_REST_API_URL + dijkstra_KV_REST_API_TOKEN","KV_REST_API_URL + KV_REST_API_TOKEN"]}'
 		return
 	fi
 
