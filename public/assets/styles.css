@@ -1,0 +1,219 @@
+body {
+    font-family: 'Latin Modern Roman', 'Computer Modern', Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+    color: #1a1a1a;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 10px 16px;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 2em 0 1.5em 0;
+}
+
+.name-section {
+    flex: 1;
+}
+
+.main-nav {
+    display: flex;
+    align-items: baseline;
+    gap: 1em;
+}
+
+.nav-link {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.nav-link.active {
+    font-style: italic;
+}
+
+.page-content {
+    display: none;
+}
+
+.page-content.active {
+    display: block;
+}
+
+.bjj-hover {
+    position: relative;
+    cursor: pointer;
+    color: #1a1a1a;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.bjj-hover:hover::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 100%;
+    margin-left: 10px;
+    width: 300px;
+    height: 225px;
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #1a1a1a;
+    background-color: white;
+    z-index: 1000;
+    display: block;
+}
+
+a {
+    color: #1a1a1a;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: #555;
+}
+
+.reading-link {
+    color: #1a1a1a;
+}
+
+/* --- writing ----------------------------------------------------------- */
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list li {
+    margin-bottom: 0.5em;
+}
+
+.post-date {
+    color: #777;
+    font-size: 16px;
+    margin-left: 0.6em;
+}
+
+.back-link {
+    display: inline-block;
+    margin: 2em 0 1.5em 0;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.post h1 {
+    margin-bottom: 0.2em;
+}
+
+.post .post-date {
+    display: block;
+    margin: 0 0 2em 0;
+}
+
+.post h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 1.8em 0 0.5em 0;
+}
+
+.post blockquote {
+    margin: 1.5em 0;
+    padding-left: 1em;
+    border-left: 2px solid #ddd;
+    color: #555;
+}
+
+.post pre {
+    background: #f5f5f5;
+    padding: 0.8em 1em;
+    overflow-x: auto;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- votes -------------------------------------------------------------- */
+
+.vote {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.3em;
+    margin: 3em 0 2em 0;
+}
+
+/* Styled to read like the "← Writing" back link rather than a form control:
+   no border, no fill, underline on hover. */
+.vote-btn {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.vote-btn:hover:not(:disabled) {
+    text-decoration: underline;
+}
+
+.vote-btn:disabled {
+    cursor: default;
+    color: #999;
+}
+
+.vote-btn.chosen {
+    color: #1a1a1a;
+    text-decoration: underline;
+}
+
+.vote-count {
+    color: #555;
+    margin-right: 0.8em;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Set smaller and lighter than the arrows so it reads as an aside rather than
+   an instruction. Wraps to its own line on narrow screens. */
+.vote-note {
+    color: #777;
+    font-size: 16px;
+    font-style: italic;
+    margin-left: 0.4em;
+}
+
+.vote-msg {
+    color: #999;
+}
