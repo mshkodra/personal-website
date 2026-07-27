@@ -99,6 +99,32 @@ a:hover {
     color: #1a1a1a;
 }
 
+/* Splitting the reading list into two <ul>s isn't enough on its own -- adjacent
+   block margins collapse, so two lists back to back get the same gap as one.
+   This pushes the second group down explicitly. */
+.reading-break {
+    margin-top: 2em;
+}
+
+/* A single row instead of a stacked bulleted list -- three one-word links
+   read as a list on their own without needing markers or line breaks.
+   Indented to the same depth as the other sections' <ul> lists, so it's
+   visually a child of "My links" rather than its own paragraph. */
+.links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding-left: 40px;
+}
+
+.links-row a {
+    text-decoration: none;
+}
+
+.links-row a:hover {
+    text-decoration: underline;
+}
+
 /* --- writing ----------------------------------------------------------- */
 
 .post-list {
