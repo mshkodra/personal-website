@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# private local notes (may reference captured tokens/cookies/student ids)
+/docs/better-radius-notes.md
+
+# local-only, not published to the public repo
+/public/better-radius.js
