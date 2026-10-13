@@ -74,6 +74,11 @@ a:hover {
     color: #1a1a1a;
 }
 
+/* inline list of linked companies: a little extra air after each comma */
+.companies a + a {
+    margin-left: 0.25em;
+}
+
 .aside {
     font-size: 14px;
     opacity: 0.6;
